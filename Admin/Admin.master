@@ -1,0 +1,197 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Admin_Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TVS CRM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../css/TVSStyle.css" rel="stylesheet" />
+    <link href="../css/Adminstyle.css" type="text/css" rel="stylesheet"  />
+
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Bootstrap Core CSS -->
+    <link href="../Admin/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <!-- Custom CSS -->
+    <link href="../Admin/css/style.css" rel='stylesheet' type='text/css' />
+    <!-- Graph CSS -->
+    <link href="../Admin/css/font-awesome.css" rel="stylesheet" />
+    <!-- jQuery -->
+
+    <link href="../Admin/css/primeui.css" rel="stylesheet" />
+    <link href="../Admin/css/theme.css" rel="stylesheet" />
+
+
+    <!-- lined-icons -->
+    <link href="../Admin/css/icon-font.min.css" rel="stylesheet" type='text/css' />
+    <!-- //lined-icons -->
+    <!-- chart -->
+    <script src="../Admin/js/Chart.js"></script>
+    <!-- //chart -->
+    <!--animate-->
+    <link href="../Admin/css/animate.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="../Admin/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!--//end-animate-->
+    <!----webfonts--->
+    <link href='../Admin/css/fonts-googleapis.css' rel='stylesheet' type='text/css' />
+    <!---//webfonts--->
+    <!-- Meters graphs -->
+    <script src="../Admin/js/jquery-1.10.2.min.js"></script>
+    <!-- Placed js at the end of the document so the pages load faster -->
+
+    <!-- DateTime Picker -->
+    <link rel="stylesheet" type="text/css" media="screen" href="../Content/bootstrap.min.css" />
+    <link href="../Content/bootstrap-datetimepicker.css" rel="stylesheet" />
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/jquery-2.1.1.min.js"></script>
+    <script src="../Scripts/moment-with-locales.js"></script>
+    <script src="../Scripts/bootstrap-datetimepicker.js"></script>
+    <!-- -->
+    <style>
+        .main-content {
+            min-height:0px!important;
+        }
+        .main-content2copy
+        {
+            min-height:0px!important;
+        }
+    </style>
+</head>
+<body class="sticky-header left-side-collapsed" onload="initMap()" style ="background-color:#f9f9f9;">
+    <form id="form1" runat="server">
+        <section>
+            <!-- left side start-->
+            <div class="left-side sticky-left-side">
+
+                <!--logo and iconic logo start-->
+                <div class="logo">
+                    <h1><a href="default.aspx">TVS <span>Admin</span></a></h1>
+                </div>
+                <div class="logo-icon text-center">
+                    <a href="../Admin/default.aspx"><i class="lnr lnr-home"></i></a>
+                </div>
+
+                <!--logo and iconic logo end-->
+                <div class="left-side-inner">
+                    <!--sidebar nav start-->
+                    <ul class="nav nav-pills nav-stacked custom-nav">
+                        <li class="menu-list">
+                            <a href="#"><i class="lnr lnr-cog"></i>
+                                <span>Hệ thống</span></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="../Admin/AboutUs.aspx">Thông tin đơn vị</a></li>
+                                <li><a href="../Admin/GroupAccount.aspx">Nhóm tài khoản</a></li>
+                                <li><a href="../Admin/Account.aspx">Tài khoản người dùng</a></li>
+                                <li><a href="../Admin/Config.aspx">Cấu hình hệ thống</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-list"><a href="#"><i class="lnr lnr-indent-increase"></i><span>Quản lý khách hàng</span></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="../Admin/Customer.aspx?type=2">Khách hàng tiềm năng</a></li>
+                                <li><a href="../Admin/Customer.aspx?type=3">Khách hàng hiện hữu</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-list"><a href="#"><i class="lnr lnr-envelope"></i><span>Quản lý công việc</span></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="../Admin/Target.aspx">Mục tiêu, nhiệm vụ</a> </li>
+                                <li><a href="../Admin/Contact.aspx">Danh bạ</a> </li>
+                            </ul>
+                        </li>
+                        <li class="menu-list"><a href="#"><i class="lnr lnr-select"></i><span style ="width:220px!important;">Báo cáo</span></a>
+                            <ul class="sub-menu-list">
+                                <li style ="width:220px!important;"><a href="../Report/RepTakeCareCustomer.aspx?type=2">Chăm sóc khách hàng tiềm năng</a> </li>
+                                <li><a href="../Report/RepTakeCareCustomer.aspx?type=3">Chăm sóc khách hàng hiện hữu</a> </li>
+                                <li><a href="../Report/RepTakeCareCustomerGeneral.aspx">Tổng hợp chăm sóc khách hàng</a> </li>
+                                <li><a href="../Report/RepChiTietThueBao.aspx">Chi tiết thuê bao doanh nghiệp</a> </li>
+                            </ul>
+                        </li>
+                        <li class="menu-list"><a href="#"><i class="lnr lnr-book"></i><span>Danh mục</span></a>
+                            <ul class="sub-menu-list">
+                                <li><a href="../Admin/Provincer.aspx">Tỉnh, thành</a> </li>
+                                <li><a href="../Admin/District.aspx">Quận, huyện</a> </li>
+                                <li><a href="../Admin/Ward.aspx">Phường, xã</a> </li>
+                                <li><a href="../Admin/Business.aspx">Ngành nghề kinh doanh</a> </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!--sidebar nav end-->
+                </div>
+            </div>
+            <!-- left side end-->
+
+            <!-- main content start-->
+            <div class="main-content main-content2 main-content2copy">
+                <!-- header-starts -->
+                <div class="header-section">
+
+                    <!--toggle button start-->
+                   <%-- <a class="toggle-btn  menu-collapsed"><i class="fa fa-bars"></i></a>--%>
+                    <!--toggle button end-->
+
+                    <!--notification menu start -->
+                    <div class="profile_details_left">
+                        <div style="margin-top: 10px; padding-left:15px;">
+                            <b>TVSCRM.NET</b> - <% Response.Write(this.strTitle); %>
+                        </div>
+                    </div>
+                    <div class="menu-right">
+                        <div class="user-panel-top">
+                            <div class="profile_details">
+                                <ul>
+                                    <li class="dropdown profile_details_drop">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                            <div class="profile_img">
+                                                <span style="background: url(images/tvs.jpg) no-repeat center"></span>
+                                                <div class="user-name">
+                                                    <p style="width: 100px;"><% Response.Write(Session["ACCOUNT"].ToString()); %><br />
+                                                        <span style="width: 100px;"><% Response.Write(Session["FULLNAME"].ToString()); %></span></p>
+                                                </div>
+                                                <i class="lnr lnr-chevron-down"></i>
+                                                <i class="lnr lnr-chevron-up"></i>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </a>
+                                        <ul class="dropdown-menu drp-mnu">
+                                            <li><a href="../Admin/Setting.aspx"><i class="fa fa-cog"></i>Cài đặt</a> </li>
+                                            <li><a href="../Admin/Profile.aspx"><i class="fa fa-user"></i>Cấu hình</a> </li>
+                                            <li><a href="../Admin/logout.aspx"><i class="fa fa-sign-out"></i>Thoát</a> </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="social_icons">
+                                <%-- <div class="col-md-4 social_icons-left">
+                                    <a href="#" class="yui"><i class="fa fa-facebook i1"></i><span>300<sup>+</sup> Likes</span></a>
+                                </div>
+                                <div class="col-md-4 social_icons-left pinterest">
+                                    <a href="#"><i class="fa fa-google-plus i1"></i><span>500<sup>+</sup> Shares</span></a>
+                                </div>
+                                <div class="col-md-4 social_icons-left twi">
+                                    <a href="#"><i class="fa fa-twitter i1"></i><span>500<sup>+</sup> Tweets</span></a>
+                                </div>--%>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <!--notification menu end -->
+                </div>
+                <!-- //header-ends -->
+
+                <div id="page-wrapper">
+                    <div class="graphs">
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="../Admin/js/jquery.nicescroll.js"></script>
+        <script src="../Admin/js/scripts.js"></script>
+    </form>
+    <iframe src ="../admin/AutoRefresh.html" style ="width:0px !important; height:0px !important; border:none;"></iframe>
+</body>
+</html>
